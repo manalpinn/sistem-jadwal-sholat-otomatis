@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal Sholat ESP32</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>🕌 Jadwal Sholat</h1>
+  <p>Konfigurasi Perangkat ESP32</p>
+  <div id="apBanner" class="ap-banner hidden">
+    ⚠️ Mode Konfigurasi Aktif — Hubungkan WiFi & Atur Kota
+  </div>
+</header>
+
+<nav class="navbar">
+  <button onclick="showPage('dashboard')">🏠 Dashboard</button>
+  <button onclick="showPage('kota')">🕌 Kota & Jadwal</button>
+  <button onclick="showPage('wifi')">📶 WiFi</button>
+  <button onclick="showPage('settings')">⚙️ Pengaturan</button>
+</nav>
+
+<main class="container">
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="page active">
+  <div class="card">
+    <h2>Status Perangkat</h2>
+    <div id="statusBox">Memuat...</div>
+  </div>
+
+<div class="card">
+ <h3>🧪 Test Adzan Manual</h3>
+
+<label class="select-label">
+  Pilih Sholat
+</label>
+
+<div class="select-wrapper">
+  <select id="adzanIndex">
+    <option value="0">Subuh</option>
+    <option value="1">Dzuhur</option>
+    <option value="2">Ashar</option>
+    <option value="3">Maghrib</option>
+    <option value="4">Isya</option>
+  </select>
+</div>
+
+<button class="danger" onclick="runAdzanNow()">
+  🔊 Test Adzan
+</button>
+
+<div id="adzanTestMessage" class="message"></div>
+
+  <div class="card">
+    <h2>Jadwal Sholat Hari Ini</h2>
+    <table id="jadwalTable"></table>
+  </div>
+</section>
+
+<!-- KOTA -->
+<section id="kota" class="page">
+  <div class="card">
+    <h2>Konfigurasi Kota</h2>
+    <input id="kotaInput" placeholder="Contoh: Bandung">
+    <button onclick="searchKota()">Cari Kota</button>
+
+    <div id="kotaMessage" class="message"></div>
+    <ul id="kotaList" class="list"></ul>
+  </div>
+</section>
+
+<!-- WIFI -->
+<section id="wifi" class="page">
+  <div class="card">
+    <h2>WiFi Manager</h2>
+    <button onclick="scanWifi()">🔄 Scan WiFi</button>
+    <ul id="wifiList" class="list"></ul>
+
+    <input id="ssid" placeholder="SSID">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="connectWifi()">Connect WiFi</button>
+
+    <div id="wifiStatus" class="message"></div>
+  </div>
+</section>
+
+<!-- SETTINGS -->
+<section id="settings" class="page">
+  <div class="card">
+    <h2>Pengaturan Sistem</h2>
+
+    <label for="volume">Volume Adzan (0–25)</label>
+    <div>
+      Nilai: <span id="volumeValue">25</span>
+    </div>
+    <input type="range" min="0" max="25" id="volume" value="25">
+
+    <div class="toggle-row">
+      <span>Aktifkan Buzzer Tambahan</span>
+      <input type="checkbox" id="buzzer">
+    </div>
+
+    <button id="saveBtn">Simpan Pengaturan</button>
+    <div id="configMessage" class="message"></div>
+  </div>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

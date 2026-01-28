@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.header {
+  background: #0f172a;
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+
+.ap-banner {
+  margin-top: 10px;
+  background: #f59e0b;
+  color: #000;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.hidden {
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  background: #020617;
+}
+
+.navbar button {
+  flex: 1;
+  padding: 12px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar button:hover {
+  background: #1e293b;
+}
+
+.container {
+  padding: 16px;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+}
+
+.list li:hover {
+  background: #e5e7eb;
+}
+
+.message {
+  margin-top: 8px;
+  font-size: 0.9em;
+  color: #dc2626;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table td {
+  padding: 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+.toggle-row span {
+  font-size: 0.95em;
+}
+
+.toggle-row input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.select-wrapper {
+  margin: 8px 0 12px 0;
+}
+
+.select-wrapper select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+/* icon panah */
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: "▼";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #666;
+  pointer-events: none;
+}
+
+.select-wrapper select:focus {
+  outline: none;
+  border-color: #d9534f;
+  box-shadow: 0 0 0 2px rgba(217, 83, 79, 0.15);
+}
+
+#jadwalTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#jadwalTable th,
+#jadwalTable td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#jadwalTable th {
+  background: #2c3e50;
+  color: #fff;
+}
+
+#jadwalTable tr:last-child td {
+  border-bottom: none;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .navbar button {
+    font-size: 0.85em;
+  }
+}
