@@ -14,8 +14,8 @@
 #include <EEPROM.h>
 
 // ===== TELEGRAM CONFIG =====
-#define BOT_TOKEN "8509632695:AAHaJ4g08QafGez7zcb1JjqXmYsxTf4HehA"
-#define CHAT_ID "1206871328"
+#define BOT_TOKEN ""
+#define CHAT_ID ""
 
 // ===== PIN CONFIG =====
 #define BUTTON_PIN 18
