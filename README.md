@@ -138,4 +138,4 @@ Proyek ini bersifat **open-source** dan bebas digunakan untuk pembelajaran maupu
 
 ---
 
-🙏 *Semoga bermanfaat dan menjad
+🙏 *Semoga bermanfaat dan menjadi amal jariyah.*
